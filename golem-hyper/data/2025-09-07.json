@@ -1,0 +1,452 @@
+[
+  {
+    "rank": 1,
+    "name": "Anonymous",
+    "address": "0x77c3ea550d2da44b120e55071f57a108f8dd5e45",
+    "platform": "Avantis",
+    "allTimePnl": "309103011.9973880053",
+    "weeklyPnl": "7112015.2720489996",
+    "monthlyPnl": "42061092.1083469987"
+  },
+  {
+    "rank": 2,
+    "name": "thank you jefef",
+    "address": "0xfae95f601f3a25ace60d19dbb929f2a5c57e3571",
+    "platform": "Avantis",
+    "allTimePnl": "166149989.7842980027",
+    "weeklyPnl": "8502710.9329620004",
+    "monthlyPnl": "18789503.1446329989"
+  },
+  {
+    "rank": 3,
+    "name": "Anonymous",
+    "address": "0x9794bbbc222b6b93c1417d01aa1ff06d42e5333b",
+    "platform": "EdgeX",
+    "allTimePnl": "147523455.4827440083",
+    "weeklyPnl": "3504427.817886",
+    "monthlyPnl": "15248986.0793140009"
+  },
+  {
+    "rank": 4,
+    "name": "Anonymous",
+    "address": "0x716bd8d3337972db99995dda5c4b34d954a61d95",
+    "platform": "Hyperliquid",
+    "allTimePnl": "112799229.8451820016",
+    "weeklyPnl": "4634088.4673549999",
+    "monthlyPnl": "12329367.0540769994"
+  },
+  {
+    "rank": 5,
+    "name": "jefe",
+    "address": "0x51156f7002c4f74f4956c9e0f2b7bfb6e9dbfac2",
+    "platform": "Hyperliquid",
+    "allTimePnl": "103786039.9804670066",
+    "weeklyPnl": "4325988.3229949996",
+    "monthlyPnl": "13552332.1932740007"
+  },
+  {
+    "rank": 6,
+    "name": "Anonymous",
+    "address": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+    "platform": "Avantis",
+    "allTimePnl": "98806218.799052",
+    "weeklyPnl": "4011141.2328699999",
+    "monthlyPnl": "9414596.1836440004"
+  },
+  {
+    "rank": 7,
+    "name": "Anonymous",
+    "address": "0xbde2ddc49a2e6827300faa6afc93d572114a60b1",
+    "platform": "EdgeX",
+    "allTimePnl": "84440049.0054879934",
+    "weeklyPnl": "4767868.8582859999",
+    "monthlyPnl": "10519605.2714179996"
+  },
+  {
+    "rank": 8,
+    "name": "Anonymous",
+    "address": "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
+    "platform": "Avantis",
+    "allTimePnl": "83000635.1165989935",
+    "weeklyPnl": "223114.916888",
+    "monthlyPnl": "4311046.1343609998"
+  },
+  {
+    "rank": 9,
+    "name": "Anonymous",
+    "address": "0x393d0b87ed38fc779fd9611144ae649ba6082109",
+    "platform": "EdgeX",
+    "allTimePnl": "80219725.8659999967",
+    "weeklyPnl": "96552397.6439999938",
+    "monthlyPnl": "168507656.0500000119"
+  },
+  {
+    "rank": 10,
+    "name": "Anonymous",
+    "address": "0xbdfa4f4492dd7b7cf211209c4791af8d52bf5c50",
+    "platform": "EdgeX",
+    "allTimePnl": "80034315.2662789971",
+    "weeklyPnl": "2691259.243214",
+    "monthlyPnl": "6207997.8574529998"
+  },
+  {
+    "rank": 11,
+    "name": "TheWhiteWhale",
+    "address": "0xb8b9e3097c8b1dddf9c5ea9d48a7ebeaf09d67d2",
+    "platform": "EdgeX",
+    "allTimePnl": "75336873.9572760016",
+    "weeklyPnl": "1117901.6758349999",
+    "monthlyPnl": "43932106.1399699971"
+  },
+  {
+    "rank": 12,
+    "name": "Anonymous",
+    "address": "0x493db0ed7514c975e9abcc110bd40c473b6763e3",
+    "platform": "Hyperliquid",
+    "allTimePnl": "73077831.101402998",
+    "weeklyPnl": "2971848.9498239998",
+    "monthlyPnl": "9011495.1829959992"
+  },
+  {
+    "rank": 13,
+    "name": "Anonymous",
+    "address": "0xa350d83fdcc7ac81dfaedea1a87108401ccb015f",
+    "platform": "Avantis",
+    "allTimePnl": "70432153.6190000027",
+    "weeklyPnl": "6439868.4759999998",
+    "monthlyPnl": "14287001.9879999999"
+  },
+  {
+    "rank": 14,
+    "name": "Anonymous",
+    "address": "0x4e14fc11f58b64740e66e4b1aa188a4b007c0eab",
+    "platform": "Hyperliquid",
+    "allTimePnl": "69797869.8085040003",
+    "weeklyPnl": "3977048.740427",
+    "monthlyPnl": "8833120.4172460008"
+  },
+  {
+    "rank": 15,
+    "name": "Anonymous",
+    "address": "0xcfdb74a8c080bb7b4360ed6fe21f895c653efff4",
+    "platform": "Avantis",
+    "allTimePnl": "67863706.4962210059",
+    "weeklyPnl": "3466729.2090830002",
+    "monthlyPnl": "8302582.8526219996"
+  },
+  {
+    "rank": 16,
+    "name": "Anonymous",
+    "address": "0x20c2d95a3dfdca9e9ad12794d5fa6fad99da44f5",
+    "platform": "Hyperliquid",
+    "allTimePnl": "61865487.1230410039",
+    "weeklyPnl": "-296449.3403100001",
+    "monthlyPnl": "1249816.7768730002"
+  },
+  {
+    "rank": 17,
+    "name": "Anonymous",
+    "address": "0x7f0269d7438a27811e6fa0fc33b51a79ea79be9e",
+    "platform": "Avantis",
+    "allTimePnl": "57142931.5160000026",
+    "weeklyPnl": "4712666.2860000003",
+    "monthlyPnl": "10693624.4499999993"
+  },
+  {
+    "rank": 18,
+    "name": "Anonymous",
+    "address": "0x656c8da58d738295e03550796dd83900aa7c6525",
+    "platform": "Avantis",
+    "allTimePnl": "56220600.972269997",
+    "weeklyPnl": "21110.553001",
+    "monthlyPnl": "544022.520241"
+  },
+  {
+    "rank": 19,
+    "name": "Anonymous",
+    "address": "0xc4ff1b50648213bdb064bea8c9e25bfa0606f93a",
+    "platform": "Avantis",
+    "allTimePnl": "56181425.2700000033",
+    "weeklyPnl": "4717757.7000000002",
+    "monthlyPnl": "10705177.5"
+  },
+  {
+    "rank": 20,
+    "name": "Anonymous",
+    "address": "0x0d446c3372a9ba9cddef0eef7a1afab6dc0e8c0b",
+    "platform": "Avantis",
+    "allTimePnl": "55042382.9280939996",
+    "weeklyPnl": "1619654.2251200001",
+    "monthlyPnl": "3502638.141204"
+  },
+  {
+    "rank": 21,
+    "name": "Anonymous",
+    "address": "0x03b9a189e2480d1e4c3007080b29f362282130fa",
+    "platform": "Avantis",
+    "allTimePnl": "54948397.8513339981",
+    "weeklyPnl": "2260410.7482809997",
+    "monthlyPnl": "6781839.6274259994"
+  },
+  {
+    "rank": 22,
+    "name": "ABC",
+    "address": "0x162cc7c861ebd0c06b3d72319201150482518185",
+    "platform": "EdgeX",
+    "allTimePnl": "53341650.573815994",
+    "weeklyPnl": "4066016.1203870005",
+    "monthlyPnl": "12930675.9839020018"
+  },
+  {
+    "rank": 23,
+    "name": "Anonymous",
+    "address": "0x8af700ba841f30e0a3fcb0ee4c4a9d223e1efa05",
+    "platform": "EdgeX",
+    "allTimePnl": "52994762.6483250037",
+    "weeklyPnl": "591589.421055",
+    "monthlyPnl": "-1420206.0862040001"
+  },
+  {
+    "rank": 24,
+    "name": "Anonymous",
+    "address": "0x13c50dcdee4bbcba71baf578b345cdd35c7928be",
+    "platform": "EdgeX",
+    "allTimePnl": "49194054.847093001",
+    "weeklyPnl": "1848710.326716",
+    "monthlyPnl": "4468185.0574899996"
+  },
+  {
+    "rank": 25,
+    "name": "Anonymous",
+    "address": "0x7dacca323e44f168494c779bb5e7483c468ef410",
+    "platform": "Hyperliquid",
+    "allTimePnl": "46675391.3355579972",
+    "weeklyPnl": "2527963.517829",
+    "monthlyPnl": "6208455.7055969993"
+  },
+  {
+    "rank": 26,
+    "name": "Anonymous",
+    "address": "0x010461c14e146ac35fe42271bdc1134ee31c703a",
+    "platform": "EdgeX",
+    "allTimePnl": "44199286.1827870011",
+    "weeklyPnl": "228038.857313",
+    "monthlyPnl": "-75165.052164"
+  },
+  {
+    "rank": 27,
+    "name": "Anonymous",
+    "address": "0xda3cdff67ce27fa68ba5600a7c95efd8153d9f15",
+    "platform": "Avantis",
+    "allTimePnl": "43301713.4263269976",
+    "weeklyPnl": "16439.596402",
+    "monthlyPnl": "36471.631421"
+  },
+  {
+    "rank": 28,
+    "name": "Anonymous",
+    "address": "0x2ba553d9f990a3b66b03b2dc0d030dfc1c061036",
+    "platform": "Avantis",
+    "allTimePnl": "42454098.5287890062",
+    "weeklyPnl": "604875.6764849999",
+    "monthlyPnl": "2536502.0736619998"
+  },
+  {
+    "rank": 29,
+    "name": "Anonymous",
+    "address": "0x31ca8395cf837de08b24da3f660e77761dfb974b",
+    "platform": "EdgeX",
+    "allTimePnl": "41680209.3498179987",
+    "weeklyPnl": "-233354.472539",
+    "monthlyPnl": "311550.624071"
+  },
+  {
+    "rank": 30,
+    "name": "Anonymous",
+    "address": "0x1419e75330c71ce463102e6a1eb62fe80b412d5f",
+    "platform": "Hyperliquid",
+    "allTimePnl": "40190814.7945590019",
+    "weeklyPnl": "2398391.7479909998",
+    "monthlyPnl": "5964872.5111919995"
+  },
+  {
+    "rank": 31,
+    "name": "Anonymous",
+    "address": "0x56498e5f90c14060499b62b6f459b3e3fb9280c5",
+    "platform": "EdgeX",
+    "allTimePnl": "38928314.6913300008",
+    "weeklyPnl": "-286227.338231",
+    "monthlyPnl": "8588622.1380569991"
+  },
+  {
+    "rank": 32,
+    "name": "Anonymous",
+    "address": "0x15b325660a1c4a9582a7d834c31119c0cb9e3a42",
+    "platform": "Hyperliquid",
+    "allTimePnl": "38408098.811247997",
+    "weeklyPnl": "-1855243.6739409999",
+    "monthlyPnl": "1103093.6559860001"
+  },
+  {
+    "rank": 33,
+    "name": "Auros",
+    "address": "0x023a3d058020fb76cca98f01b3c48c8938a22355",
+    "platform": "Hyperliquid",
+    "allTimePnl": "37354827.004914999",
+    "weeklyPnl": "1152322.2518440001",
+    "monthlyPnl": "1247721.5861750001"
+  },
+  {
+    "rank": 34,
+    "name": "Anonymous",
+    "address": "0x82d8dc80190e6bc1d92b048f9fc7e85e5e1e32ff",
+    "platform": "EdgeX",
+    "allTimePnl": "36844449.779087998",
+    "weeklyPnl": "2567404.6278639999",
+    "monthlyPnl": "5930735.1280420003"
+  },
+  {
+    "rank": 35,
+    "name": "Anonymous",
+    "address": "0x0e8bf301805df4e6ba7151297e5f7dfedc1eaab9",
+    "platform": "EdgeX",
+    "allTimePnl": "36443068.6366899982",
+    "weeklyPnl": "2328895.6675140001",
+    "monthlyPnl": "5191398.6744790003"
+  },
+  {
+    "rank": 36,
+    "name": "Anonymous",
+    "address": "0xd22fd233a6ed7b6a19c659fb4f05fefa4f0c7043",
+    "platform": "Avantis",
+    "allTimePnl": "35852473.0019999966",
+    "weeklyPnl": "3135453.3300000001",
+    "monthlyPnl": "7242961.3119999999"
+  },
+  {
+    "rank": 37,
+    "name": "Anonymous",
+    "address": "0x4a207d289fd49e60502451099771127bcf35b961",
+    "platform": "Avantis",
+    "allTimePnl": "35467588.1808720008",
+    "weeklyPnl": "205320.92908",
+    "monthlyPnl": "-17835753.7345409989"
+  },
+  {
+    "rank": 38,
+    "name": "Anonymous",
+    "address": "0xc59498175d6d317642aeb97f895a7ce1aa992191",
+    "platform": "Avantis",
+    "allTimePnl": "33284442.9033429995",
+    "weeklyPnl": "1743990.2265319999",
+    "monthlyPnl": "3956929.7377599999"
+  },
+  {
+    "rank": 39,
+    "name": "Anonymous",
+    "address": "0xbee95bb47bc4e28bb1fd489a2d0f873fe59172ad",
+    "platform": "Avantis",
+    "allTimePnl": "33175097.9225399978",
+    "weeklyPnl": "1265836.050024",
+    "monthlyPnl": "3850148.179612"
+  },
+  {
+    "rank": 40,
+    "name": "Anonymous",
+    "address": "0xa23190045c4aebeb724844ce622465475e539bae",
+    "platform": "EdgeX",
+    "allTimePnl": "32632850.5828640014",
+    "weeklyPnl": "3190971.360231",
+    "monthlyPnl": "3728203.9955549999"
+  },
+  {
+    "rank": 41,
+    "name": "Anonymous",
+    "address": "0xc764acfc6724434fb7a76f1c09db9b42481a443c",
+    "platform": "EdgeX",
+    "allTimePnl": "31800534.0839999989",
+    "weeklyPnl": "2991039.4079999998",
+    "monthlyPnl": "6818995.7120000003"
+  },
+  {
+    "rank": 42,
+    "name": "MachiBigBrother",
+    "address": "0x020ca66c30bec2c4fe3861a94e4db4a498a35872",
+    "platform": "Avantis",
+    "allTimePnl": "31777023.7484459989",
+    "weeklyPnl": "637323.288294",
+    "monthlyPnl": "9674147.9063569997"
+  },
+  {
+    "rank": 43,
+    "name": "Anonymous",
+    "address": "0x77375a8c9d13bf79afb2a87f1b0ac1dfd5f5bf66",
+    "platform": "Avantis",
+    "allTimePnl": "31731235.7958090007",
+    "weeklyPnl": "930267.698221",
+    "monthlyPnl": "2924193.4548510001"
+  },
+  {
+    "rank": 44,
+    "name": "Anonymous",
+    "address": "0xb2833d8822baa7b4e6418c0d891ec94db31adf5a",
+    "platform": "Hyperliquid",
+    "allTimePnl": "31321325.9580000006",
+    "weeklyPnl": "3223783.8450000002",
+    "monthlyPnl": "7447006.608"
+  },
+  {
+    "rank": 45,
+    "name": "NMTD -Thank you Jeff",
+    "address": "0xf517639a8872e756ac98d3c65507d2ebc25cc032",
+    "platform": "EdgeX",
+    "allTimePnl": "31157815.3044290021",
+    "weeklyPnl": "1249181.4565029999",
+    "monthlyPnl": "3578089.5798380002"
+  },
+  {
+    "rank": 46,
+    "name": "Anonymous",
+    "address": "0x8196e0648cb16e9151c2920618a58605706b5836",
+    "platform": "Avantis",
+    "allTimePnl": "31022214.4658779986",
+    "weeklyPnl": "743342.971608",
+    "monthlyPnl": "2321816.7751000002"
+  },
+  {
+    "rank": 47,
+    "name": "Anonymous",
+    "address": "0xa312114b5795dff9b8db50474dd57701aa78ad1e",
+    "platform": "Avantis",
+    "allTimePnl": "30463639.8146010004",
+    "weeklyPnl": "-335908.185467",
+    "monthlyPnl": "8884585.7769339997"
+  },
+  {
+    "rank": 48,
+    "name": "Anonymous",
+    "address": "0x99967871e6c4f9a5185abc57edede9e9540191f6",
+    "platform": "Hyperliquid",
+    "allTimePnl": "28554066.0966069996",
+    "weeklyPnl": "1606269.846838",
+    "monthlyPnl": "3975502.5686769998"
+  },
+  {
+    "rank": 49,
+    "name": "Anonymous",
+    "address": "0x0f991873aab3e14191978946d48f30f624ae9867",
+    "platform": "Hyperliquid",
+    "allTimePnl": "28029634.6993639991",
+    "weeklyPnl": "982610.98707",
+    "monthlyPnl": "3103610.945363"
+  },
+  {
+    "rank": 50,
+    "name": "Anonymous",
+    "address": "0xd9225c2b6383f6e532c01c34d7588b1106b9e30b",
+    "platform": "Hyperliquid",
+    "allTimePnl": "27596947.9986939989",
+    "weeklyPnl": "1252302.5430099999",
+    "monthlyPnl": "2906844.5026870002"
+  }
+]

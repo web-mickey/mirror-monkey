@@ -1,0 +1,39 @@
+{
+  "name": "hyperliquid-golem-db-integration",
+  "version": "1.0.0",
+  "description": "Integration to save Hyperliquid perpetual DEX trades to Golem DB",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/hyperliquid-golem-integration.ts",
+    "integration": "tsx src/hyperliquid-golem-integration.ts",
+    "leaderboard": "tsx src/daily-leaderboard-golem.ts",
+    "leaderboard:file": "tsx src/file-based-leaderboard.ts",
+    "leaderboard:today": "tsx src/file-based-leaderboard.ts data/2025-09-07.json",
+    "leaderboard:read": "tsx src/read-leaderboard-from-chain.ts",
+    "leaderboard:read:date": "tsx src/read-leaderboard-from-chain.ts"
+  },
+  "keywords": [
+    "hyperliquid",
+    "golem-db",
+    "defi",
+    "trading",
+    "perpetuals"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.19.13",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.0",
+    "ethers": "^6.0.0",
+    "golem-base-sdk": "^0.1.16",
+    "tslib": "^2.8.1"
+  }
+}

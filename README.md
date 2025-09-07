@@ -21,7 +21,9 @@ This project was built during the ETH Warsaw 2025 hackathon.
 
 ## Tech Stack
 
-- Scaffold
+- Golem DB
+- BuildGuidl
+- Civic
+- Base Mini Apps
 - Next.js
-- Tailwind CSS
-- Civic (for authentication)
+- HyperLiquid
