@@ -328,8 +328,15 @@ export function LeaderboardTable() {
                     })}
                   </td>
                   <td className="table-cell">
-                    <button onClick={handleCopyTrade} className="modern-btn modern-btn-active text-xs px-3 py-1">
+                    <button 
+                      onClick={handleCopyTrade} 
+                      className="modern-btn modern-btn-active text-xs px-3 py-1 relative group"
+                      title="Copytrading feature coming soon! You'll be able to automatically mirror this trader's positions."
+                    >
                       Copytrade
+                      <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                        Coming Soon! 🚀
+                      </span>
                     </button>
                   </td>
                 </tr>
