@@ -252,20 +252,26 @@ export function LeaderboardTable() {
         <table className="modern-table">
           <thead>
             <tr className="table-header">
-              <th className="table-cell-header sortable" onClick={() => handleSort("name")}>
+              <th className="table-cell-header sortable text-xs sm:text-sm" onClick={() => handleSort("name")}>
                 Trader {sortField === "name" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
               </th>
-              <th className="table-cell-header">Platform</th>
-              <th className="table-cell-header sortable" onClick={() => handleSort("weeklyPnl")}>
-                Weekly PnL {sortField === "weeklyPnl" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
+              <th className="table-cell-header text-xs sm:text-sm">Platform</th>
+              <th className="table-cell-header sortable text-xs sm:text-sm" onClick={() => handleSort("weeklyPnl")}>
+                <span className="hidden sm:inline">Weekly PnL</span>
+                <span className="sm:hidden">Week</span>
+                {sortField === "weeklyPnl" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
               </th>
-              <th className="table-cell-header sortable" onClick={() => handleSort("monthlyPnl")}>
-                Monthly PnL {sortField === "monthlyPnl" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
+              <th className="table-cell-header sortable text-xs sm:text-sm" onClick={() => handleSort("monthlyPnl")}>
+                <span className="hidden sm:inline">Monthly PnL</span>
+                <span className="sm:hidden">Month</span>
+                {sortField === "monthlyPnl" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
               </th>
-              <th className="table-cell-header sortable" onClick={() => handleSort("allTimePnl")}>
-                All-Time PnL {sortField === "allTimePnl" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
+              <th className="table-cell-header sortable text-xs sm:text-sm" onClick={() => handleSort("allTimePnl")}>
+                <span className="hidden sm:inline">All-Time PnL</span>
+                <span className="sm:hidden">All-Time</span>
+                {sortField === "allTimePnl" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
               </th>
-              <th className="table-cell-header"></th>
+              <th className="table-cell-header text-xs sm:text-sm"></th>
             </tr>
           </thead>
           <tbody>
@@ -288,44 +294,61 @@ export function LeaderboardTable() {
                 <tr key={trader.ethAddress} className="table-row">
                   <td className="table-cell">
                     <div>
-                      <div className="font-medium text-white">{trader.displayName || "Anonymous"}</div>
-                      <div className="text-xs text-white opacity-60">
-                        {trader.ethAddress.slice(0, 6)}...{trader.ethAddress.slice(-4)}
+                      <div className="font-medium text-white text-xs sm:text-sm">{trader.displayName || "Anonymous"}</div>
+                      <div className="text-[10px] sm:text-xs text-white opacity-60">
+                        <span className="sm:hidden">{trader.ethAddress.slice(0, 4)}...{trader.ethAddress.slice(-2)}</span>
+                        <span className="hidden sm:inline">{trader.ethAddress.slice(0, 6)}...{trader.ethAddress.slice(-4)}</span>
                       </div>
                     </div>
                   </td>
                   <td className="table-cell">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1 sm:gap-2">
                       <Image
                         src={platform.logo}
                         alt={platform.name}
-                        width={16}
-                        height={16}
-                        style={{ marginRight: "4px" }}
+                        width={12}
+                        height={12}
+                        className="sm:w-4 sm:h-4"
+                        style={{ marginRight: "2px" }}
                       />
-                      <span className="text-white">{platform.name}</span>
+                      <span className="text-white text-xs sm:text-sm">{platform.name}</span>
                     </div>
                   </td>
-                  <td className={`table-cell ${weeklyPnl >= 0 ? "text-white" : "text-white opacity-60"}`}>
-                    {weeklyPnl >= 0 ? "+" : ""}$
-                    {weeklyPnl.toLocaleString("en-US", {
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                    })}
+                  <td className={`table-cell text-xs sm:text-sm ${weeklyPnl >= 0 ? "text-white" : "text-white opacity-60"}`}>
+                    <span className="sm:hidden">
+                      {weeklyPnl >= 0 ? "+" : ""}${Math.abs(weeklyPnl) >= 1000 ? `${(weeklyPnl/1000).toFixed(1)}k` : weeklyPnl.toFixed(0)}
+                    </span>
+                    <span className="hidden sm:inline">
+                      {weeklyPnl >= 0 ? "+" : ""}$
+                      {weeklyPnl.toLocaleString("en-US", {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      })}
+                    </span>
                   </td>
-                  <td className={`table-cell ${monthlyPnl >= 0 ? "text-white" : "text-white opacity-60"}`}>
-                    {monthlyPnl >= 0 ? "+" : ""}$
-                    {monthlyPnl.toLocaleString("en-US", {
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                    })}
+                  <td className={`table-cell text-xs sm:text-sm ${monthlyPnl >= 0 ? "text-white" : "text-white opacity-60"}`}>
+                    <span className="sm:hidden">
+                      {monthlyPnl >= 0 ? "+" : ""}${Math.abs(monthlyPnl) >= 1000 ? `${(monthlyPnl/1000).toFixed(1)}k` : monthlyPnl.toFixed(0)}
+                    </span>
+                    <span className="hidden sm:inline">
+                      {monthlyPnl >= 0 ? "+" : ""}$
+                      {monthlyPnl.toLocaleString("en-US", {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      })}
+                    </span>
                   </td>
-                  <td className={`table-cell ${allTimePnl >= 0 ? "text-white" : "text-white opacity-60"}`}>
-                    {allTimePnl >= 0 ? "+" : ""}$
-                    {allTimePnl.toLocaleString("en-US", {
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                    })}
+                  <td className={`table-cell text-xs sm:text-sm ${allTimePnl >= 0 ? "text-white" : "text-white opacity-60"}`}>
+                    <span className="sm:hidden">
+                      {allTimePnl >= 0 ? "+" : ""}${Math.abs(allTimePnl) >= 1000 ? `${(allTimePnl/1000).toFixed(1)}k` : allTimePnl.toFixed(0)}
+                    </span>
+                    <span className="hidden sm:inline">
+                      {allTimePnl >= 0 ? "+" : ""}$
+                      {allTimePnl.toLocaleString("en-US", {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      })}
+                    </span>
                   </td>
                   <td className="table-cell">
                     <button 
@@ -347,7 +370,7 @@ export function LeaderboardTable() {
       </div>
 
       <div className="pagination-container">
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-2 sm:gap-4 justify-center">
           {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
             let pageNumber;
             if (totalPages <= 5) {
@@ -363,7 +386,7 @@ export function LeaderboardTable() {
             return (
               <button
                 key={pageNumber}
-                className={`modern-btn ${currentPage === pageNumber ? "modern-btn-active" : "modern-btn-outline"}`}
+                className={`modern-btn text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-2 ${currentPage === pageNumber ? "modern-btn-active" : "modern-btn-outline"}`}
                 onClick={() => goToPage(pageNumber)}
               >
                 {pageNumber}
