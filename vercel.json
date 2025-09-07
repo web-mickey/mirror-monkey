@@ -1,0 +1,12 @@
+{
+  "buildCommand": "cd frontend/packages/nextjs && yarn build",
+  "outputDirectory": "frontend/packages/nextjs/.next",
+  "installCommand": "cd frontend/packages/nextjs && yarn install",
+  "framework": "nextjs",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/packages/nextjs/$1"
+    }
+  ]
+}

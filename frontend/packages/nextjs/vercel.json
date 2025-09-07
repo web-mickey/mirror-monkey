@@ -1,3 +1,10 @@
 {
-  "installCommand": "yarn install"
+  "installCommand": "yarn install",
+  "buildCommand": "yarn build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "env": {
+    "PRIVATE_KEY": "@private_key",
+    "NEXT_PUBLIC_CIVIC_CLIENT_ID": "@next_public_civic_client_id"
+  }
 }
