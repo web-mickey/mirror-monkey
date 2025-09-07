@@ -1,13 +1,24 @@
 import { LeaderboardApiResponse } from './types';
 
-const LEADERBOARD_API_URL = 'http://localhost:3005';
-
-export async function fetchLeaderboard(): Promise<LeaderboardApiResponse> {
-  const response = await fetch(`${LEADERBOARD_API_URL}/leaderboard`);
-  
-  if (!response.ok) {
-    throw new Error(`Failed to fetch leaderboard: ${response.statusText}`);
+export async function fetchLeaderboard(date?: string): Promise<LeaderboardApiResponse> {
+  try {
+    const searchParams = new URLSearchParams();
+    if (date) {
+      searchParams.append('date', date);
+    }
+    
+    const url = `/api/leaderboard${searchParams.toString() ? '?' + searchParams.toString() : ''}`;
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+      throw new Error(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
+    }
+    
+    return response.json();
+    
+  } catch (error) {
+    console.error('Failed to fetch leaderboard:', error);
+    throw error instanceof Error ? error : new Error('Failed to fetch leaderboard');
   }
-  
-  return response.json();
 }

@@ -31,9 +31,7 @@ export function LeaderboardTable() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortField, setSortField] = useState<
-    "name" | "weeklyPnl" | "weeklyRoi" | "monthlyPnl" | "monthlyRoi" | "allTimePnl" | "allTimeRoi"
-  >("allTimePnl");
+  const [sortField, setSortField] = useState<"name" | "weeklyPnl" | "monthlyPnl" | "allTimePnl">("allTimePnl");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
 
   useEffect(() => {
@@ -59,29 +57,12 @@ export function LeaderboardTable() {
     if (leaderboardData.length > 0) {
       // Filter out rows where any USD display shows $0
       const filteredData = leaderboardData.filter(trader => {
-        const weeklyPerf = trader.windowPerformances.find(([window]) => window === "week")?.[1];
-        const monthlyPerf = trader.windowPerformances.find(([window]) => window === "month")?.[1];
         const allTimePerf = trader.windowPerformances.find(([window]) => window === "allTime")?.[1];
-
-        const weeklyPnl = weeklyPerf ? parseFloat(weeklyPerf.pnl) : 0;
-        const weeklyRoi = weeklyPerf ? parseFloat(weeklyPerf.roi) : 0;
-        const monthlyPnl = monthlyPerf ? parseFloat(monthlyPerf.pnl) : 0;
-        const monthlyRoi = monthlyPerf ? parseFloat(monthlyPerf.roi) : 0;
         const allTimePnl = allTimePerf ? parseFloat(allTimePerf.pnl) : 0;
-        const allTimeRoi = allTimePerf ? parseFloat(allTimePerf.roi) : 0;
-
-        // Check if any USD value would display as $0 (rounded to nearest dollar)
-        const weeklyPnlRounded = Math.round(Math.abs(weeklyPnl));
-        const monthlyPnlRounded = Math.round(Math.abs(monthlyPnl));
         const allTimePnlRounded = Math.round(Math.abs(allTimePnl));
 
         return (
-          weeklyPnlRounded > 0 &&
-          weeklyRoi !== 0 &&
-          monthlyPnlRounded > 0 &&
-          monthlyRoi !== 0 &&
-          allTimePnlRounded > 0 &&
-          allTimeRoi !== 0
+          allTimePnlRounded > 1000 // Only show traders with significant all-time PnL (> $1000)
         );
       });
 
@@ -101,35 +82,17 @@ export function LeaderboardTable() {
             aValue = aWeeklyPerf ? parseFloat(aWeeklyPerf.pnl) : 0;
             bValue = bWeeklyPerf ? parseFloat(bWeeklyPerf.pnl) : 0;
             break;
-          case "weeklyRoi":
-            const aWeeklyRoi = a.windowPerformances.find(([window]) => window === "week")?.[1];
-            const bWeeklyRoi = b.windowPerformances.find(([window]) => window === "week")?.[1];
-            aValue = aWeeklyRoi ? parseFloat(aWeeklyRoi.roi) : 0;
-            bValue = bWeeklyRoi ? parseFloat(bWeeklyRoi.roi) : 0;
-            break;
           case "monthlyPnl":
             const aMonthlyPerf = a.windowPerformances.find(([window]) => window === "month")?.[1];
             const bMonthlyPerf = b.windowPerformances.find(([window]) => window === "month")?.[1];
             aValue = aMonthlyPerf ? parseFloat(aMonthlyPerf.pnl) : 0;
             bValue = bMonthlyPerf ? parseFloat(bMonthlyPerf.pnl) : 0;
             break;
-          case "monthlyRoi":
-            const aMonthlyRoi = a.windowPerformances.find(([window]) => window === "month")?.[1];
-            const bMonthlyRoi = b.windowPerformances.find(([window]) => window === "month")?.[1];
-            aValue = aMonthlyRoi ? parseFloat(aMonthlyRoi.roi) : 0;
-            bValue = bMonthlyRoi ? parseFloat(bMonthlyRoi.roi) : 0;
-            break;
           case "allTimePnl":
             const aAllTimePerf = a.windowPerformances.find(([window]) => window === "allTime")?.[1];
             const bAllTimePerf = b.windowPerformances.find(([window]) => window === "allTime")?.[1];
             aValue = aAllTimePerf ? parseFloat(aAllTimePerf.pnl) : 0;
             bValue = bAllTimePerf ? parseFloat(bAllTimePerf.pnl) : 0;
-            break;
-          case "allTimeRoi":
-            const aAllTimeRoi = a.windowPerformances.find(([window]) => window === "allTime")?.[1];
-            const bAllTimeRoi = b.windowPerformances.find(([window]) => window === "allTime")?.[1];
-            aValue = aAllTimeRoi ? parseFloat(aAllTimeRoi.roi) : 0;
-            bValue = bAllTimeRoi ? parseFloat(bAllTimeRoi.roi) : 0;
             break;
           default: // allTimePnl
             const aAllTimePnlDefault = a.windowPerformances.find(([window]) => window === "allTime")?.[1];
@@ -187,7 +150,7 @@ export function LeaderboardTable() {
   }
 
   const handleSort = (
-    field: "name" | "weeklyPnl" | "weeklyRoi" | "monthlyPnl" | "monthlyRoi" | "allTimePnl" | "allTimeRoi",
+    field: "name" | "weeklyPnl" | "monthlyPnl" | "allTimePnl",
   ) => {
     const newDirection = sortField === field && sortDirection === "asc" ? "desc" : "asc";
     setSortField(field);
@@ -197,29 +160,12 @@ export function LeaderboardTable() {
 
   // Filter out rows where any USD display shows $0
   const filteredData = leaderboardData.filter(trader => {
-    const weeklyPerf = trader.windowPerformances.find(([window]) => window === "week")?.[1];
-    const monthlyPerf = trader.windowPerformances.find(([window]) => window === "month")?.[1];
     const allTimePerf = trader.windowPerformances.find(([window]) => window === "allTime")?.[1];
-
-    const weeklyPnl = weeklyPerf ? parseFloat(weeklyPerf.pnl) : 0;
-    const weeklyRoi = weeklyPerf ? parseFloat(weeklyPerf.roi) : 0;
-    const monthlyPnl = monthlyPerf ? parseFloat(monthlyPerf.pnl) : 0;
-    const monthlyRoi = monthlyPerf ? parseFloat(monthlyPerf.roi) : 0;
     const allTimePnl = allTimePerf ? parseFloat(allTimePerf.pnl) : 0;
-    const allTimeRoi = allTimePerf ? parseFloat(allTimePerf.roi) : 0;
-
-    // Check if any USD value would display as $0 (rounded to nearest dollar)
-    const weeklyPnlRounded = Math.round(Math.abs(weeklyPnl));
-    const monthlyPnlRounded = Math.round(Math.abs(monthlyPnl));
     const allTimePnlRounded = Math.round(Math.abs(allTimePnl));
 
     return (
-      weeklyPnlRounded > 0 &&
-      weeklyRoi !== 0 &&
-      monthlyPnlRounded > 0 &&
-      monthlyRoi !== 0 &&
-      allTimePnlRounded > 0 &&
-      allTimeRoi !== 0
+      allTimePnlRounded > 1000 // Only show traders with significant all-time PnL (> $1000)
     );
   });
 
@@ -238,35 +184,17 @@ export function LeaderboardTable() {
         aValue = aWeeklyPerf ? parseFloat(aWeeklyPerf.pnl) : 0;
         bValue = bWeeklyPerf ? parseFloat(bWeeklyPerf.pnl) : 0;
         break;
-      case "weeklyRoi":
-        const aWeeklyRoi = a.windowPerformances.find(([window]) => window === "week")?.[1];
-        const bWeeklyRoi = b.windowPerformances.find(([window]) => window === "week")?.[1];
-        aValue = aWeeklyRoi ? parseFloat(aWeeklyRoi.roi) : 0;
-        bValue = bWeeklyRoi ? parseFloat(bWeeklyRoi.roi) : 0;
-        break;
       case "monthlyPnl":
         const aMonthlyPerf = a.windowPerformances.find(([window]) => window === "month")?.[1];
         const bMonthlyPerf = b.windowPerformances.find(([window]) => window === "month")?.[1];
         aValue = aMonthlyPerf ? parseFloat(aMonthlyPerf.pnl) : 0;
         bValue = bMonthlyPerf ? parseFloat(bMonthlyPerf.pnl) : 0;
         break;
-      case "monthlyRoi":
-        const aMonthlyRoi = a.windowPerformances.find(([window]) => window === "month")?.[1];
-        const bMonthlyRoi = b.windowPerformances.find(([window]) => window === "month")?.[1];
-        aValue = aMonthlyRoi ? parseFloat(aMonthlyRoi.roi) : 0;
-        bValue = bMonthlyRoi ? parseFloat(bMonthlyRoi.roi) : 0;
-        break;
       case "allTimePnl":
         const aAllTimePerf = a.windowPerformances.find(([window]) => window === "allTime")?.[1];
         const bAllTimePerf = b.windowPerformances.find(([window]) => window === "allTime")?.[1];
         aValue = aAllTimePerf ? parseFloat(aAllTimePerf.pnl) : 0;
         bValue = bAllTimePerf ? parseFloat(bAllTimePerf.pnl) : 0;
-        break;
-      case "allTimeRoi":
-        const aAllTimeRoi = a.windowPerformances.find(([window]) => window === "allTime")?.[1];
-        const bAllTimeRoi = b.windowPerformances.find(([window]) => window === "allTime")?.[1];
-        aValue = aAllTimeRoi ? parseFloat(aAllTimeRoi.roi) : 0;
-        bValue = bAllTimeRoi ? parseFloat(bAllTimeRoi.roi) : 0;
         break;
       default: // allTimePnl
         const aAllTimePnlDefault = a.windowPerformances.find(([window]) => window === "allTime")?.[1];
@@ -305,12 +233,13 @@ export function LeaderboardTable() {
               <span className="flex items-center gap-1 text-[10px] text-white opacity-50">
                 data powered by
                 <Image src="/golem.png" alt="Golem" width={70} height={43} />
+                DB
               </span>
             </h2>
           </div>
           <div className="flex flex-col text-right text-sm text-white opacity-60">
             <span>
-              Showing {startIndex + 1}-{Math.min(endIndex, sortedData.length)} of {sortedData.length} active traders
+              Showing {startIndex + 1}-{Math.min(endIndex, sortedData.length)} of {sortedData.length}
             </span>
             <span>
               Page {currentPage} of {totalPages}
@@ -330,20 +259,11 @@ export function LeaderboardTable() {
               <th className="table-cell-header sortable" onClick={() => handleSort("weeklyPnl")}>
                 Weekly PnL {sortField === "weeklyPnl" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
               </th>
-              <th className="table-cell-header sortable" onClick={() => handleSort("weeklyRoi")}>
-                Weekly ROI {sortField === "weeklyRoi" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
-              </th>
               <th className="table-cell-header sortable" onClick={() => handleSort("monthlyPnl")}>
                 Monthly PnL {sortField === "monthlyPnl" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
               </th>
-              <th className="table-cell-header sortable" onClick={() => handleSort("monthlyRoi")}>
-                Monthly ROI {sortField === "monthlyRoi" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
-              </th>
               <th className="table-cell-header sortable" onClick={() => handleSort("allTimePnl")}>
                 All-Time PnL {sortField === "allTimePnl" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
-              </th>
-              <th className="table-cell-header sortable" onClick={() => handleSort("allTimeRoi")}>
-                All-Time ROI {sortField === "allTimeRoi" && (sortDirection === "asc" ? <FaSortUp /> : <FaSortDown />)}
               </th>
               <th className="table-cell-header"></th>
             </tr>
@@ -355,11 +275,8 @@ export function LeaderboardTable() {
               const allTimePerformance = trader.windowPerformances.find(([window]) => window === "allTime")?.[1];
 
               const weeklyPnl = weeklyPerformance ? parseFloat(weeklyPerformance.pnl) : 0;
-              const weeklyRoi = weeklyPerformance ? parseFloat(weeklyPerformance.roi) : 0;
               const monthlyPnl = monthlyPerformance ? parseFloat(monthlyPerformance.pnl) : 0;
-              const monthlyRoi = monthlyPerformance ? parseFloat(monthlyPerformance.roi) : 0;
               const allTimePnl = allTimePerformance ? parseFloat(allTimePerformance.pnl) : 0;
-              const allTimeRoi = allTimePerformance ? parseFloat(allTimePerformance.roi) : 0;
 
               const handleCopyTrade = () => {
                 // No action - disabled
@@ -396,10 +313,6 @@ export function LeaderboardTable() {
                       maximumFractionDigits: 0,
                     })}
                   </td>
-                  <td className={`table-cell ${weeklyRoi >= 0 ? "text-white" : "text-white opacity-60"}`}>
-                    {weeklyRoi >= 0 ? "+" : ""}
-                    {(weeklyRoi * 100).toFixed(2)}%
-                  </td>
                   <td className={`table-cell ${monthlyPnl >= 0 ? "text-white" : "text-white opacity-60"}`}>
                     {monthlyPnl >= 0 ? "+" : ""}$
                     {monthlyPnl.toLocaleString("en-US", {
@@ -407,20 +320,12 @@ export function LeaderboardTable() {
                       maximumFractionDigits: 0,
                     })}
                   </td>
-                  <td className={`table-cell ${monthlyRoi >= 0 ? "text-white" : "text-white opacity-60"}`}>
-                    {monthlyRoi >= 0 ? "+" : ""}
-                    {(monthlyRoi * 100).toFixed(2)}%
-                  </td>
                   <td className={`table-cell ${allTimePnl >= 0 ? "text-white" : "text-white opacity-60"}`}>
                     {allTimePnl >= 0 ? "+" : ""}$
                     {allTimePnl.toLocaleString("en-US", {
                       minimumFractionDigits: 0,
                       maximumFractionDigits: 0,
                     })}
-                  </td>
-                  <td className={`table-cell ${allTimeRoi >= 0 ? "text-white" : "text-white opacity-60"}`}>
-                    {allTimeRoi >= 0 ? "+" : ""}
-                    {(allTimeRoi * 100).toFixed(2)}%
                   </td>
                   <td className="table-cell">
                     <button onClick={handleCopyTrade} className="modern-btn modern-btn-active text-xs px-3 py-1">
