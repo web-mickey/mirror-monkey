@@ -23,11 +23,11 @@ Can be found in: business_model.md
 ## What's Included
 
 - A frontend app BuildGuidl scaffold with Civic
-- A holem-hyper indexer for Hyperliquid perps data and a simplified version which writes daily leaderboard data to Golem DB
+- A holem-hyper indexer for Hyperliquid perps data and a simplified version which writes global daily leaderboard data to Golem DB
 
 ## Tech Stack
 
-- Golem DB
+- Golem DB (https://explorer.ethwarsaw.holesky.golemdb.io/entity/0x71d5b5dfea4522511ee6a9d7ff40d81b2c640414a450307dcca0e27dd99c08e3?tab=data)
 - BuildGuidl
 - Civic
 - Base Mini Apps
